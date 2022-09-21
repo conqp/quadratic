@@ -12,16 +12,16 @@ pub fn abc(a: f64, b: f64, c: f64) -> Solution {
     Solution::new(x1, x2)
 }
 
+pub fn bc(b: f64, c: f64) -> Solution {
+    Solution::new(-c / b, f64::NAN)
+}
+
 pub fn pq(p: f64, q: f64) -> Solution {
     let minus_p_half = -p / 2.0;
     let root = f64::sqrt(f64::powi(p / 2.0, 2) - q);
     let x1 = minus_p_half + root;
     let x2 = minus_p_half - root;
     Solution::new(x1, x2)
-}
-
-pub fn bc(b: f64, c: f64) -> Solution {
-    Solution::new(-c / b, f64::NAN)
 }
 
 impl Solution {
