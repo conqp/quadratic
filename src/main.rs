@@ -12,4 +12,6 @@ fn main() {
     println!("The solutions of {} are {}", equation3, equation3.solve());
     println!("The solutions of {} are {}", equation4, equation4.solve());
     println!("The solutions of {} are {}", equation5, equation5.solve());
+    println!("Debugging equation 1: {:#?}", equation1);
+    println!("Debugging solution 1: {:#?}", equation1.solve());
 }
