@@ -2,6 +2,7 @@ use std::fmt;
 
 mod solution;
 use self::solution::abc;
+use self::solution::bc;
 use self::solution::pq;
 use self::solution::Solution;
 
@@ -17,7 +18,9 @@ impl QuadraticEquation {
     }
 
     pub fn solve(&self) -> Solution {
-        if self.a == 1.0 {
+        if self.a == 0.0 {
+            bc(self.b, self.c)
+        } else if self.a == 1.0 {
             pq(self.b, self.c)
         } else {
             abc(self.a, self.b, self.c)
@@ -74,8 +77,16 @@ fn format_coefficient(number: f64, omit_one: bool) -> String {
 
 fn format_sign(number: f64, first: bool) -> String {
     if number < 0.0 {
-        if first { "-".to_string() } else { " - ".to_string() }
+        if first {
+            "-".to_string()
+        } else {
+            " - ".to_string()
+        }
     } else {
-        if first { "".to_string() } else { " + ".to_string() }
+        if first {
+            "".to_string()
+        } else {
+            " + ".to_string()
+        }
     }
 }

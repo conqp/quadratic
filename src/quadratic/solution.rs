@@ -20,6 +20,10 @@ pub fn pq(p: f64, q: f64) -> Solution {
     Solution::new(x1, x2)
 }
 
+pub fn bc(b: f64, c: f64) -> Solution {
+    Solution::new(-c / b, f64::NAN)
+}
+
 impl Solution {
     pub fn new(x1: f64, x2: f64) -> Solution {
         Solution { x1: x1, x2: x2 }
