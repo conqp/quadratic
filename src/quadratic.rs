@@ -1,9 +1,5 @@
 use std::fmt;
 
-mod functions;
-use self::functions::format_coefficient;
-use self::functions::format_sign;
-
 mod solution;
 use self::solution::abc;
 use self::solution::pq;
@@ -65,5 +61,21 @@ impl fmt::Debug for QuadraticEquation {
 impl fmt::Display for QuadraticEquation {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.to_string())
+    }
+}
+
+fn format_coefficient(number: f64, omit_one: bool) -> String {
+    if number.abs() == 1.0 && omit_one {
+        "".to_string()
+    } else {
+        number.abs().to_string()
+    }
+}
+
+fn format_sign(number: f64, first: bool) -> String {
+    if number < 0.0 {
+        if first { "-".to_string() } else { " - ".to_string() }
+    } else {
+        if first { "".to_string() } else { " + ".to_string() }
     }
 }
