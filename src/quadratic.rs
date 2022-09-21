@@ -51,3 +51,9 @@ impl fmt::Display for QuadraticEquation {
         write!(f, "{}", self.to_string())
     }
 }
+
+impl fmt::Debug for QuadraticEquation {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "QuadraticEquation {{ a: {}, b: {}, c: {} }}", self.a, self.b, self.c)
+    }
+}

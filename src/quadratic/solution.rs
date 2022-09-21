@@ -43,3 +43,9 @@ impl fmt::Display for Solution {
         write!(f, "{}", self.to_string())
     }
 }
+
+impl fmt::Debug for Solution {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Solution {{ x1: {}, x2: {} }}", self.x1, self.x2)
+    }
+}
