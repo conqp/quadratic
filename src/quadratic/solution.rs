@@ -29,12 +29,12 @@ impl Solution {
         Solution { x1: x1, x2: x2 }
     }
 
-    pub fn error(&self) -> bool {
+    pub fn is_empty(&self) -> bool {
         self.x1.is_nan() && self.x2.is_nan()
     }
 
     pub fn to_string(&self) -> String {
-        if self.error() {
+        if self.is_empty() {
             "N/A".to_string()
         } else {
             format!("x₁ = {}, x₂ = {}", self.x1, self.x2)
