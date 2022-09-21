@@ -41,9 +41,9 @@ impl Solution {
 impl fmt::Debug for Solution {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("Solution")
-         .field("x1", &self.x1)
-         .field("x2", &self.x2)
-         .finish()
+            .field("x1", &self.x1)
+            .field("x2", &self.x2)
+            .finish()
     }
 }
 

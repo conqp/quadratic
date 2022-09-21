@@ -49,10 +49,10 @@ impl QuadraticEquation {
 impl fmt::Debug for QuadraticEquation {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("QuadraticEquation")
-         .field("a", &self.a)
-         .field("b", &self.b)
-         .field("c", &self.c)
-         .finish()
+            .field("a", &self.a)
+            .field("b", &self.b)
+            .field("c", &self.c)
+            .finish()
     }
 }
 
