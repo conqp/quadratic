@@ -54,6 +54,10 @@ impl fmt::Display for QuadraticEquation {
 
 impl fmt::Debug for QuadraticEquation {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "QuadraticEquation {{ a: {}, b: {}, c: {} }}", self.a, self.b, self.c)
+        f.debug_struct("QuadraticEquation")
+         .field("a", &self.a)
+         .field("b", &self.b)
+         .field("c", &self.c)
+         .finish()
     }
 }

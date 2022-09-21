@@ -46,6 +46,9 @@ impl fmt::Display for Solution {
 
 impl fmt::Debug for Solution {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "Solution {{ x1: {}, x2: {} }}", self.x1, self.x2)
+        f.debug_struct("Solution")
+         .field("x1", &self.x1)
+         .field("x2", &self.x2)
+         .finish()
     }
 }
