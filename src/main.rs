@@ -6,7 +6,7 @@ fn main() {
     let equation2 = QuadraticEquation::new(1.0, 3.0, -18.0);
     let equation3 = QuadraticEquation::new(-4.0, -5.0, 12.0);
     let equation4 = QuadraticEquation::new(1.0, 0.0, -25.0);
-    let equation5 = QuadraticEquation::new(1.0, 0.0, 1.0);
+    let equation5 = QuadraticEquation::new(-1.0, 0.0, 1.0);
     println!("The solutions of {} are {}", equation1, equation1.solve());
     println!("The solutions of {} are {}", equation2, equation2.solve());
     println!("The solutions of {} are {}", equation3, equation3.solve());

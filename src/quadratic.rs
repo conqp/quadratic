@@ -1,7 +1,8 @@
 use std::fmt;
 
 mod functions;
-use self::functions::with_sign;
+use self::functions::format_coefficient;
+use self::functions::format_sign;
 
 mod solution;
 use self::solution::abc;
@@ -31,18 +32,23 @@ impl QuadraticEquation {
         let mut result = Vec::new();
 
         if self.a != 0.0 {
-            result.push(format!("{}x²", with_sign(self.a, true, result.is_empty())));
+            result.push(format_sign(self.a, result.is_empty()));
+            result.push(format_coefficient(self.a, true));
+            result.push("x²".to_string());
         }
 
         if self.b != 0.0 {
-            result.push(format!("{}x", with_sign(self.b, true, result.is_empty())));
+            result.push(format_sign(self.b, result.is_empty()));
+            result.push(format_coefficient(self.b, true));
+            result.push("x".to_string());
         }
 
         if self.c != 0.0 {
-            result.push(with_sign(self.c, false, result.is_empty()));
+            result.push(format_sign(self.c, result.is_empty()));
+            result.push(format_coefficient(self.c, false));
         }
 
-        result.join(" ")
+        result.join("")
     }
 }
 
