@@ -1,4 +1,3 @@
-mod quadratic;
 use quadratic::QuadraticEquation;
 
 fn main() {
